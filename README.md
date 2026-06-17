@@ -3,6 +3,8 @@
 This repository contains my work while following the book *Agile Web Development with Ruby on Rails 8 Edition*.
 
 The goal of this project is to learn Ruby on Rails by building a full web application step by step, following best practices used in real-world development.
+<img width="1508" height="979" alt="image" src="https://github.com/user-attachments/assets/072b81b2-8de3-4162-8bad-c5e22639e972" />
+
 
 ## What I’m learning
 - Ruby on Rails fundamentals (Rails 8)
