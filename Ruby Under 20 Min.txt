@@ -1,0 +1,241 @@
+Last login: Wed Jun 17 21:04:22 on console
+bermettalanbekova@Bermets-MBP ~ % irb 
+
+⢀⡴⠊⢉⡟⢿  IRB v1.18.0 - Ruby 3.4.3
+⣎⣀⣴⡋⡟⣻  "cd object" to navigate into an object
+⣟⣼⣱⣽⣟⣾  ~
+
+irb(main):001> "Hello World"
+=> "Hello World"
+irb(main):002> 3+2
+=> 5
+irb(main):003> a = 2
+=> 2
+irb(main):004> b= 3
+=> 3
+irb(main):005> Math.sqrt(a+b)
+=> 2.23606797749979
+irb(main):006* def hi
+irb(main):007*   puts "Hello World"
+irb(main):008> end
+=> :hi
+irb(main):009> hi
+Hello World
+=> nil
+irb(main):010> hi()
+Hello World
+=> nil
+irb(main):011* def hi(name)
+irb(main):012*   puts "Hello #{name}!"
+irb(main):013> end
+=> :hi
+irb(main):014> hi(Bermet)
+(irb):14:in '<main>': uninitialized constant Bermet (NameError)
+	from <internal:kernel>:168:in 'Kernel#loop'
+	from /Users/bermettalanbekova/.local/share/mise/installs/ruby/3.4.3/lib/ruby/gems/3.4.0/gems/irb-1.18.0/exe/irb:9:in '<top (required)>'
+	from /Users/bermettalanbekova/.local/share/mise/installs/ruby/3.4.3/bin/irb:25:in 'Kernel#load'
+	from /Users/bermettalanbekova/.local/share/mise/installs/ruby/3.4.3/bin/irb:25:in '<main>'
+irb(main):015> hi("Bermet")
+Hello Bermet!
+=> nil
+irb(main):016* class Greeter
+irb(main):017*   def initialize(name="World")
+irb(main):018*     @name = name
+irb(main):019*   end
+irb(main):020*   def say_hi
+irb(main):021*     puts "Hi #{@name}!"
+irb(main):022*   end
+irb(main):023*   def say_bye
+irb(main):024*     puts "Bye #{@name}, come back!"
+irb(main):025*   end
+irb(main):026> end
+=> :say_bye
+irb(main):027> greeter
+(irb):27:in '<main>': undefined local variable or method 'greeter' for main (NameError)
+	from <internal:kernel>:168:in 'Kernel#loop'
+	from /Users/bermettalanbekova/.local/share/mise/installs/ruby/3.4.3/lib/ruby/gems/3.4.0/gems/irb-1.18.0/exe/irb:9:in '<top (required)>'
+	from /Users/bermettalanbekova/.local/share/mise/installs/ruby/3.4.3/bin/irb:25:in 'Kernel#load'
+	from /Users/bermettalanbekova/.local/share/mise/installs/ruby/3.4.3/bin/irb:25:in '<main>'
+irb(main):028> greeter("Bermet")
+(irb):28:in '<main>': undefined method 'greeter' for main (NoMethodError)
+	from <internal:kernel>:168:in 'Kernel#loop'
+	from /Users/bermettalanbekova/.local/share/mise/installs/ruby/3.4.3/lib/ruby/gems/3.4.0/gems/irb-1.18.0/exe/irb:9:in '<top (required)>'
+	from /Users/bermettalanbekova/.local/share/mise/installs/ruby/3.4.3/bin/irb:25:in 'Kernel#load'
+	from /Users/bermettalanbekova/.local/share/mise/installs/ruby/3.4.3/bin/irb:25:in '<main>'
+irb(main):029> g = Greeter.new("Beremt")
+=> #<Greeter:0x00000001296e1778 @name="Beremt">
+irb(main):030> g.say_hi
+Hi Beremt!
+=> nil
+irb(main):031> g.say_bye
+Bye Beremt, come back!
+=> nil
+irb(main):032> Greeter.instance_methods
+=> 
+[:say_bye,
+ :say_hi,
+ :to_yaml,
+ :to_json,
+ :pretty_print_inspect,
+ :pretty_print_instance_variables,
+ :pretty_print,
+ :pretty_print_cycle,
+ :singleton_class,
+ :dup,
+ :itself,
+ :methods,
+ :singleton_methods,
+ :protected_methods,
+ :private_methods,
+ :public_methods,
+ :instance_variables,
+ :instance_variable_get,
+ :instance_variable_set,
+ :instance_variable_defined?,
+ :remove_instance_variable,
+ :instance_of?,
+ :kind_of?,
+ :is_a?,
+ :display,
+ :frozen?,
+ :class,
+ :yield_self,
+ :then,
+ :tap,
+ :Namespace,
+ :public_send,
+ :extend,
+:
+ :itself,
+ :methods,
+ :singleton_methods,
+ :protected_methods,
+ :private_methods,
+ :public_methods,
+ :instance_variables,
+ :instance_variable_get,
+ :instance_variable_set,
+ :instance_variable_defined?,
+ :remove_instance_variable,
+ :instance_of?,
+ :kind_of?,
+ :is_a?,
+ :display,
+ :frozen?,
+ :class,
+ :yield_self,
+ :then,
+ :tap,
+ :Namespace,
+ :public_send,
+ :extend,
+irb(main):033* class Greeter
+irb(main):034*   attr_accessor :name
+irb(main):035> end
+=> [:name, :name=]
+irb(main):036> greeter= Greeter.new("Andy")
+=> #<Greeter:0x0000000127c8a7a8 @name="Andy">
+irb(main):037> greeter.respond_to?("name")
+=> true
+irb(main):038> greeter.respond_to?("name=")
+=> true
+irb(main):039> greeter.say_hi
+Hi Andy!
+=> nil
+irb(main):040> greeter.name
+=> "Andy"
+irb(main):041> greeter.name="Sam"
+=> "Sam"
+irb(main):042> greeter.say_hi
+Hi Sam!
+=> nil
+irb(main):043> g.respond_to?("name")
+=> true
+irb(main):044* class MegaGreeter
+irb(main):045*   attr_accessor :names
+irb(main):046*   def initalize(names = "World")
+irb(main):047*     @names= names
+irb(main):048*   end
+irb(main):049*   def say_hi
+irb(main):050*     if @names.nil?
+irb(main):051*       puts "..."
+irb(main):052*     elsif @names.respond_to?("each")
+irb(main):053*       @names.each do |name|
+irb(main):054*         puts "Hello #{name}!"
+irb(main):055*       end
+irb(main):056*     else
+irb(main):057*       puts "Hello #{@names}!"
+irb(main):058*     end
+irb(main):059*   end
+irb(main):060*   
+irb(main):061*   
+irb(main):062*   def say_bye
+irb(main):063*     if @names.nil?
+irb(main):064*       puts "..."
+irb(main):065*     elsif @names.respond_to?("join")
+irb(main):066*       puts "Goodbye #{@names.join(", ")}. Come Bavk soon!"
+irb(main):067*     else 
+irb(main):068*       puts "Goodbye #{@names}. Come back soon!"
+irb(main):069*     end
+irb(main):070*   end
+irb(main):071> end 
+=> :say_bye
+irb(main):072* if __FILE__ == $0
+irb(main):073*   mg = MegaGreeter.new
+irb(main):074*   mg.say_hi
+irb(main):075*   mg.say_bye
+irb(main):076*   
+irb(main):077*   mg.names= "Zeke"
+irb(main):078*   mg.say_hi
+irb(main):079*   mg.say_bye
+irb(main):080*   
+irb(main):081*   mg.names = "Zeke"
+irb(main):082*   mg.say_hi
+irb(main):083*   mg.say_bye
+irb(main):084*   
+irb(main):085*   mg.names = ["Naomi", "Janelle", "Abbie", "Mika", "Anahi"]
+irb(main):086*   mg.say_hi
+irb(main):087*   mg.say_bye
+irb(main):088*   
+irb(main):089*   mg.names = nil
+irb(main):090*   mg.say_hi
+irb(main):091*   mg.say_bye
+irb(main):092> end
+=> nil
+irb(main):093> touch ri20min.rb
+(irb):93:in '<main>': undefined local variable or method 'ri20min' for main (NameError)
+	from <internal:kernel>:168:in 'Kernel#loop'
+	from /Users/bermettalanbekova/.local/share/mise/installs/ruby/3.4.3/lib/ruby/gems/3.4.0/gems/irb-1.18.0/exe/irb:9:in '<top (required)>'
+	from /Users/bermettalanbekova/.local/share/mise/installs/ruby/3.4.3/bin/irb:25:in 'Kernel#load'
+	from /Users/bermettalanbekova/.local/share/mise/installs/ruby/3.4.3/bin/irb:25:in '<main>'
+irb(main):094> exit
+bermettalanbekova@Bermets-MBP ~ % touch ri20min.rb
+bermettalanbekova@Bermets-MBP ~ % ruby ri20min.rb
+bermettalanbekova@Bermets-MBP ~ % code ri20min.rb
+bermettalanbekova@Bermets-MBP ~ % ls
+ATS Bermet Talantbekova Resume .docx		daybefore.txt					Music						qemu
+backup						Desktop						p4						ri20min.rb
+backup2						dnp3-example					p4-assignment0					ribsame10.txt
+binary1.gpr					Documents					Pictures					ribsameday.txt
+binary1.rep					Downloads					porject3					rrc00_updates_daybefore_10min.txt
+cps-cosimulation-env				examplenet					Project Three - Cloud Computing TA Guide.pdf	spotify-wrapped
+crypt.gpr					japs testings.jasp				project4					VIP_Final
+crypt.rep					lab4						project5					vip2025
+ctfweek1.gpr					Library						Public
+ctfweek1.rep					Movies						puf_data
+bermettalanbekova@Bermets-MBP ~ % cat ri20min.rb
+bermettalanbekova@Bermets-MBP ~ % code ri20min.rb
+bermettalanbekova@Bermets-MBP ~ % ruby ri20min.rb
+Hello World!
+Goodbye World.  Come back soon!
+Hello Zeke!
+Goodbye Zeke.  Come back soon!
+Hello Albert!
+Hello Brenda!
+Hello Charles!
+Hello Dave!
+Hello Engelbert!
+Goodbye Albert, Brenda, Charles, Dave, Engelbert.  Come back soon!
+...
+...
+bermettalanbekova@Bermets-MBP ~ % 
