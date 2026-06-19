@@ -1,0 +1,47 @@
+
+<div id="<%= dom_id post %>" class="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden">
+
+  <% if post.video_url.present? %>
+    <div class="aspect-video">
+      <iframe
+        src="<%= post.video_url %>"
+        class="w-full h-full"
+        allowfullscreen>
+      </iframe>
+    </div>
+  <% end %>
+
+  <div class="p-8">
+
+    <div class="flex items-center justify-between mb-4">
+      <h1 class="text-3xl font-bold text-gray-900">
+        <%= post.title %>
+      </h1>
+
+      <% if post.pro? %>
+        <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-semibold">
+          PRO
+        </span>
+      <% end %>
+    </div>
+
+    <% if post.description.present? %>
+      <div class="mb-6">
+        <h2 class="text-lg font-semibold text-gray-800 mb-2">
+          Description
+        </h2>
+        <p class="text-gray-600 leading-relaxed">
+          <%= post.description %>
+        </p>
+      </div>
+    <% end %>
+
+    <div class="border-t pt-4">
+      <p class="text-sm text-gray-500">
+        Published <%= post.created_at.strftime("%B %d, %Y") %>
+      </p>
+    </div>
+
+  </div>
+
+</div>

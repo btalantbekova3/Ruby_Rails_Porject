@@ -1,0 +1,11 @@
+<% content_for :title, "New audiobook" %>
+
+<h1>New audiobook</h1>
+
+<%= render "form", audiobook: @audiobook %>
+
+<br>
+
+<div>
+  <%= link_to "Back to audiobooks", audiobooks_path %>
+</div>
