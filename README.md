@@ -68,19 +68,6 @@ rails db:migrate
 rails db:seed
 ```
 
-### Edit Credentials
-
-```bash
-EDITOR="code --wait" rails credentials:edit
-```
-
-Example:
-
-```yaml
-admin:
-  email: admin@gmail.com
-  password: password123
-```
 
 ### Run the Application
 
